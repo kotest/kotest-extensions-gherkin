@@ -1,5 +1,5 @@
 [versions]
-kotest = "4.4.1"
+kotest = "5.3.0"
 
 [libraries]
 kotest-framework-api = { module = "io.kotest:kotest-framework-api", version.ref = "kotest" }
