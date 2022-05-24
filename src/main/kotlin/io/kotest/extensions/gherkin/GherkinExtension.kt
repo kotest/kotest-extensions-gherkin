@@ -24,12 +24,11 @@ class GherkinExtension(
    private val executedTests = mutableListOf<String>()
    private var gherkinTestNames: List<String>
 
-
    init {
-       val envelope = makeSourceEnvelope(
-          javaClass.classLoader.getResourceAsStream(featureFilePath)!!.bufferedReader().readText(),
-          featureFilePath
-       )
+      val envelope = makeSourceEnvelope(
+         javaClass.classLoader.getResourceAsStream(featureFilePath)!!.bufferedReader().readText(),
+         featureFilePath
+      )
       gherkinTestNames = fromSources(listOf(envelope), false, true, false, Incrementing()).toTestNames()
    }
 
@@ -41,7 +40,7 @@ class GherkinExtension(
    override suspend fun intercept(spec: Spec, execute: suspend (Spec) -> Unit) {
       execute(spec)
       gherkinTestNames.forEach {
-         if(it !in executedTests) {
+         if (it !in executedTests) {
             throw GherkinException(it)
          }
       }

@@ -1,0 +1,8 @@
+[versions]
+kotest = "4.4.1"
+
+[libraries]
+kotest-framework-api = { module = "io.kotest:kotest-framework-api", version.ref = "kotest" }
+kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref = "kotest" }
+
+gherkin = { module = "io.cucumber:gherkin", version = "16.0.0" }
