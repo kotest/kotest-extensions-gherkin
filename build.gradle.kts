@@ -6,7 +6,7 @@ plugins {
    `java-library`
    `maven-publish`
    signing
-   kotlin("jvm") version "1.4.21"
+   kotlin("jvm") version "1.6.21"
 }
 
 group = "io.kotest.extensions"
